@@ -188,7 +188,7 @@
         <li>
           git pull origin [branch-name]
           <em
-            >(Descarga las versión actualizada de otra rama en la rama donde nos
+            >(Descarga las versión actualizada de otra rama a la rama donde nos
             encontremos.)</em
           >
         </li>
@@ -258,9 +258,35 @@
       <ul>
         <li>
           git merge --continue
-          <em> (Permite continuar el proceso de merge.)</em>
+          <em>
+            (Permite continuar el proceso de merge. También funciona solo usar
+            con git commit y git push.)</em
+          >
         </li>
       </ul>
+      <h2>GITHUB REPOSITORIES</h2>
+      <li>
+        git clone [github-url]
+        <em>(Clones a repository)</em>
+      </li>
+      <li>
+        git remote <em>(Muestra el nombre del repositorio remoto: origin.)</em>
+      </li>
+      <li>
+        git remote -v
+        <em
+          >(Muestra detalles de origin: fetch [obtener los cambios realizados en
+          el repo] & push [enviar al repo remoto los cambios realizados
+          locales])</em
+        >
+      </li>
+      <li>
+        git push
+        <em
+          >(Realiza un commit antes de enviar los cambios al repo remoto en
+          GitHub)</em
+        >
+      </li>
     </div>
   </body>
 </html>
