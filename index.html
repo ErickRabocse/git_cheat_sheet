@@ -103,19 +103,8 @@
         >
       </li>
       <li>
-        mv [file to be renamed] [file with new name]
-        <em>(To change the name of a file)</em>
-      </li>
-      <li>
-        git add [file renamed] [the same file with old name]
-        <em>
-          (After git add separate each file with a space to complete the
-          renaming processs)
-        </em>
-      </li>
-      <li>
         git mv [file to be renamed] [file with new name]
-        <em>(To rename and stage changes at the same time!)</em>
+        <em>(To rename a file and stage changes at the same time!)</em>
       </li>
     </ul>
     <h2>WORKING WITH FILES</h2>
@@ -167,6 +156,10 @@
         git log --oneline
         <em>(Shows a shorten version of the hash and the message commited)</em>
       </li>
+      <li>
+        cat [file name]
+        <em>(Shows the content of the file in the TERMINAL)</em>
+      </li>
     </ul>
     <h2>Branches</h2>
     <ul>
@@ -187,6 +180,12 @@
       </li>
       <li>git branch <em>(Lists branches and shows you where you are.)</em></li>
       <li>
+        git branch [branch-name]
+        <em
+          >(Creates a new branch. Make sure the name is separated by a dash)</em
+        >
+      </li>
+      <li>
         git checkout -b [name of the new brach]
         <em
           >(Creates and switches to new branch. You can name them using
@@ -194,8 +193,16 @@
         >
       </li>
       <li>
-        cat [file name]
-        <em>(Shows the content of the file in the TERMINAL)</em>
+        git branch -m [new-name]
+        <em>(Cambiar el nombre de una rama. Ubicarse primero en la rama)</em>
+      </li>
+      <li>
+        git branch -m [old-name] [new-name]
+        <em>(Cambiar el nombre de cualquier rama desde la rama "main".)</em>
+      </li>
+      <li>
+        git branch -d [branch-to-be-deleted]
+        <em>(Eliminar ramas locales desde main)</em>
       </li>
       <li>
         git merge [branch which will be merged into the branch where we're
@@ -210,6 +217,26 @@
         <em
           >(To creat a new branch without merging it, but having it available in
           GITHUB)</em
+        >
+      </li>
+
+      <li><em>()</em></li>
+    </ul>
+    <h2>Commits</h2>
+    <ul>
+      <li>
+        git commit --amend
+        <em
+          >(Modify the message of the last commit. A tab pops in VS and you can
+          edit it there.)</em
+        >
+      </li>
+      <li>
+        git reset --soft HEAD~1
+        <em
+          >(Deshacer el último commit. Con SOFT no se modifican los archivos.
+          HEAD es el último commit que se realizó. Con HARD se eliminan los
+          cambios.)</em
         >
       </li>
     </ul>
