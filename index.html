@@ -8,237 +8,247 @@
     <title>GIT</title>
   </head>
   <body>
-    <h1>GIT</h1>
-    <h2>Install Git</h2>
-    <p><a href="https://git-scm.com/downloads">Install git</a>: Homebrew</p>
-    <p>
-      Download <a href="https://ohmyz.sh/#install">Oh-my-zsh</a>: sh -c "$(curl
-      -fsSL
-      https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-      <br />
-      check: .zshrc file runnig on the TERMINAL: vim ~/.zshrc
-    </p>
-    <p>Nice theme: essembeh</p>
-    <p>
-      Como
-      <a
-        href="https://www.freecodecamp.org/espanol/news/como-configurar-tu-terminal-de-macos-con-zsh/"
-        >configurar terminal</a
-      >
-    </p>
-    <h2>General settings</h2>
-    <ul>
-      <li>git --version <em>(check the version of git)</em></li>
-      <li>
-        git config --global user.name "Erick Chavez"
-        <em>(Global configuration: user)</em>
-      </li>
-      <li>
-        git config --global user.email erickchavezescobar@gmail.com
-        <em>(Global configuration: email)</em>
-      </li>
-      <li>
-        git config --global init.defaultBranch main
-        <em>(Global configuration: main instead of master)</em>
-      </li>
-      <li>
-        git config --global core.editor "code --wait"
-        <em>(Global configuration: VS)</em>
-      </li>
-      <li>
-        git config --global -e
-        <em
-          >(Global configuration: summary in VS, close it to reactivate
-          terminal)</em
+    <div class="container">
+      <h1>GIT</h1>
+      <h2>Install Git</h2>
+      <p><a href="https://git-scm.com/downloads">Install git</a>: Homebrew</p>
+      <p>
+        Download <a href="https://ohmyz.sh/#install">Oh-my-zsh</a>: sh -c
+        "$(curl -fsSL
+        https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        <br />
+        check: .zshrc file runnig on the TERMINAL: vim ~/.zshrc
+      </p>
+      <p>Nice theme: essembeh</p>
+      <p>
+        Como
+        <a
+          href="https://www.freecodecamp.org/espanol/news/como-configurar-tu-terminal-de-macos-con-zsh/"
+          >configurar terminal</a
         >
-      </li>
-      <li>
-        git config --global core.autocrlf input<em
-          >(Al agregar saltos de línea se agrega el caracter especial Line Feed
-          "LF". Al subir el código no se agrega el caracter Carriage Return
-          "CR", pero aún así git debe eliminar el caracter de forma automatica a
-          CRL )</em
-        >
-      </li>
-      <li>
-        git config -h
-        <em
-          >(Retorna listado de todas las opciones que podemos agregar a la
-          configuración)</em
-        >
-      </li>
-    </ul>
-    <h2>UPDATING GIT</h2>
-    <ul>
-      <li>brew install git <em>(installation)</em></li>
-      <li>export PATH=/usr/local/bin:$PATH <em>(Run it)</em></li>
-      <li>rm '/usr/local/bin/git' <em>(Run to delete old git)</em></li>
-      <li>brew link --overwrite git <em>(Run to overwrite it)</em></li>
-    </ul>
-    <h2>GIT FLOW</h2>
-    <ul>
-      <li>
-        git add [file to be added]
-        <em>[.] adds all, [*.txt] adds all txt files</em>
-      </li>
-      <li>git status <em>(show which files are tracked/commited)</em></li>
-      <li>
-        git commit -m "[message]"<em>
-          (Adds message to the files which are ready to be pushed)</em
-        >
-      </li>
-      <li>
-        git rm [file to be removed]
-        <em>("ls" to list all files and the choose one to be removed)</em>
-      </li>
-      <li>
-        git restore --staged [file to be restored]
-        <em>(Unstages the file which was removed)</em>
-      </li>
-      <li>
-        git restore [file to be brought back]
-        <em
-          >(Now the file is available again OR is back to its previous status:
-          UNDO)</em
-        >
-      </li>
-      <li>
-        git mv [file to be renamed] [file with new name]
-        <em>(To rename a file and stage changes at the same time!)</em>
-      </li>
-    </ul>
-    <h2>WORKING WITH FILES</h2>
-    <ul>
-      <li>
-        Create a file .env with sensitive information <br />
-        create a file .gitignore with the routes for the files to be ignored.
-        <em
-          >(Ignoring files to never be included in the git REPO. Config files
-          for local computer: variables de entorno [passwords])</em
-        >
-      </li>
-      <li>
-        Add the names of the files and folders to be hidded in the .gitignore
-        file <em>(For example: .env , node_modules)</em>
-      </li>
-      <li>
-        git add .gitignore & git commit -m "..."
-        <em
-          >(When checking with status you'll see that the only file available to
-          be added and commited is .gitignore, removing the files listed inside
-          it.)</em
-        >
-      </li>
-      <li>
-        git status -s
-        <em
-          >(Shortens the description of the status (RED = unstaged / GREEN =
-          staged or added & ready to be commited). M = modified, ?? = untracked,
-          A = .add or added)</em
-        >
-      </li>
-      <li>
-        git diff
-        <em
-          >(When changes are made to a file but are not added (.add) we can
-          check how they changed using git diff)</em
-        >
-      </li>
-      <li>
-        git diff --staged
-        <em
-          >(Only works when changed have been staged with "git add". Now will
-          see which changes have been staged)</em
-        >
-      </li>
-      <li>git log <em>(Shows all changes, author, date, hash.)</em></li>
-      <li>
-        git log --oneline
-        <em>(Shows a shorten version of the hash and the message commited)</em>
-      </li>
-      <li>
-        cat [file name]
-        <em>(Shows the content of the file in the TERMINAL)</em>
-      </li>
-    </ul>
-    <h2>Branches</h2>
-    <ul>
-      <li>
-        git branch -m master main
-        <em>(Renaming MASTER to MAIN in local repositories)</em>
-      </li>
-      <li>
-        git push -u origin main
-        <em
-          >(Renaming the Remote master Branch: Make sure your current local HEAD
-          branch is still "main" when executing the command)</em
-        >
-      </li>
-      <li>
-        git push origin --delete master
-        <em>(Remove the old "master" branch on the remote.)</em>
-      </li>
-      <li>git branch <em>(Lists branches and shows you where you are.)</em></li>
-      <li>
-        git branch [branch-name]
-        <em
-          >(Creates a new branch. Make sure the name is separated by a dash)</em
-        >
-      </li>
-      <li>
-        git checkout -b [name of the new brach]
-        <em
-          >(Creates and switches to new branch. You can name them using
-          feature/branchName)</em
-        >
-      </li>
-      <li>
-        git branch -m [new-name]
-        <em>(Cambiar el nombre de una rama. Ubicarse primero en la rama)</em>
-      </li>
-      <li>
-        git branch -m [old-name] [new-name]
-        <em>(Cambiar el nombre de cualquier rama desde la rama "main".)</em>
-      </li>
-      <li>
-        git branch -d [branch-to-be-deleted]
-        <em>(Eliminar ramas locales desde main)</em>
-      </li>
-      <li>
-        git merge [branch which will be merged into the branch where we're
-        positioned]
-        <em>(First git checkout [destination branch], then git merge)</em>
-      </li>
-      <li>
-        git merge --abort <em>(Aborts a merge, when a conflic occurs)</em>
-      </li>
-      <li>
-        git checkout -b [newBranch] & git push -u origin [newBranch]
-        <em
-          >(To creat a new branch without merging it, but having it available in
-          GITHUB)</em
-        >
-      </li>
+      </p>
+      <h2>General settings</h2>
+      <ul>
+        <li>git --version <em>(check the version of git)</em></li>
+        <li>
+          git config --global user.name "Erick Chavez"
+          <em>(Global configuration: user)</em>
+        </li>
+        <li>
+          git config --global user.email erickchavezescobar@gmail.com
+          <em>(Global configuration: email)</em>
+        </li>
+        <li>
+          git config --global init.defaultBranch main
+          <em>(Global configuration: main instead of master)</em>
+        </li>
+        <li>
+          git config --global core.editor "code --wait"
+          <em>(Global configuration: VS)</em>
+        </li>
+        <li>
+          git config --global -e
+          <em
+            >(Global configuration: summary in VS, close it to reactivate
+            terminal)</em
+          >
+        </li>
+        <li>
+          git config --global core.autocrlf input<em
+            >(Al agregar saltos de línea se agrega el caracter especial Line
+            Feed "LF". Al subir el código no se agrega el caracter Carriage
+            Return "CR", pero aún así git debe eliminar el caracter de forma
+            automatica a CRL )</em
+          >
+        </li>
+        <li>
+          git config -h
+          <em
+            >(Retorna listado de todas las opciones que podemos agregar a la
+            configuración)</em
+          >
+        </li>
+      </ul>
+      <h2>UPDATING GIT</h2>
+      <ul>
+        <li>brew install git <em>(installation)</em></li>
+        <li>export PATH=/usr/local/bin:$PATH <em>(Run it)</em></li>
+        <li>rm '/usr/local/bin/git' <em>(Run to delete old git)</em></li>
+        <li>brew link --overwrite git <em>(Run to overwrite it)</em></li>
+      </ul>
+      <h2>GIT FLOW</h2>
+      <ul>
+        <li>
+          git add [file to be added]
+          <em>[.] adds all, [*.txt] adds all txt files</em>
+        </li>
+        <li>git status <em>(show which files are tracked/commited)</em></li>
+        <li>
+          git commit -m "[message]"<em>
+            (Adds message to the files which are ready to be pushed)</em
+          >
+        </li>
+        <li>
+          git rm [file to be removed]
+          <em>("ls" to list all files and the choose one to be removed)</em>
+        </li>
+        <li>
+          git restore --staged [file to be restored]
+          <em>(Unstages the file which was removed)</em>
+        </li>
+        <li>
+          git restore [file to be brought back]
+          <em
+            >(Now the file is available again OR is back to its previous status:
+            UNDO)</em
+          >
+        </li>
+        <li>
+          git mv [file to be renamed] [file with new name]
+          <em>(To rename a file and stage changes at the same time!)</em>
+        </li>
+      </ul>
+      <h2>WORKING WITH FILES</h2>
+      <ul>
+        <li>
+          Create a file .env with sensitive information <br />
+          create a file .gitignore with the routes for the files to be ignored.
+          <em
+            >(Ignoring files to never be included in the git REPO. Config files
+            for local computer: variables de entorno [passwords])</em
+          >
+        </li>
+        <li>
+          Add the names of the files and folders to be hidded in the .gitignore
+          file <em>(For example: .env , node_modules)</em>
+        </li>
+        <li>
+          git add .gitignore & git commit -m "..."
+          <em
+            >(When checking with status you'll see that the only file available
+            to be added and commited is .gitignore, removing the files listed
+            inside it.)</em
+          >
+        </li>
+        <li>
+          git status -s
+          <em
+            >(Muestra una versión corta del status (RED = unstaged / GREEN =
+            staged or added & ready to be commited). M = modified, ?? =
+            untracked, A = .add or added)</em
+          >
+        </li>
+        <li>
+          git diff
+          <em
+            >(When changes are made to a file but are not added (.add) we can
+            check how they changed using git diff)</em
+          >
+        </li>
+        <li>
+          git diff --staged
+          <em
+            >(Only works when changed have been staged with "git add". Now will
+            see which changes have been staged)</em
+          >
+        </li>
+        <li>git log <em>(Shows all changes, author, date, hash.)</em></li>
+        <li>
+          git log --oneline
+          <em
+            >(Shows a shorten version of the hash and the message commited)</em
+          >
+        </li>
+        <li>
+          git log -p
+          <em>(Muestra la versión anterior y los cambios)</em>
+        </li>
+        <li>
+          cat [file name]
+          <em>(Shows the content of the file in the TERMINAL)</em>
+        </li>
+      </ul>
+      <h2>Branches</h2>
+      <ul>
+        <li>
+          git branch -m master main
+          <em>(Renaming MASTER to MAIN in local repositories)</em>
+        </li>
+        <li>
+          git push -u origin main
+          <em
+            >(Renaming the Remote master Branch: Make sure your current local
+            HEAD branch is still "main" when executing the command)</em
+          >
+        </li>
+        <li>
+          git push origin --delete master
+          <em>(Remove the old "master" branch on the remote.)</em>
+        </li>
+        <li>
+          git branch <em>(Lists branches and shows you where you are.)</em>
+        </li>
+        <li>
+          git branch [branch-name]
+          <em
+            >(Creates a new branch. Make sure the name is separated by a
+            dash)</em
+          >
+        </li>
+        <li>
+          git checkout -b [name of the new brach]
+          <em
+            >(Creates and switches to new branch. You can name them using
+            feature/branchName)</em
+          >
+        </li>
+        <li>
+          git branch -m [new-name]
+          <em>(Cambiar el nombre de una rama. Ubicarse primero en la rama)</em>
+        </li>
+        <li>
+          git branch -m [old-name] [new-name]
+          <em>(Cambiar el nombre de cualquier rama desde la rama "main".)</em>
+        </li>
+        <li>
+          git branch -d [branch-to-be-deleted]
+          <em>(Eliminar ramas locales desde main)</em>
+        </li>
+        <li>
+          git merge [branch-to-be-merged]
+          <em>(First git checkout [destination-branch], then git merge)</em>
+        </li>
+        <li>
+          git merge --abort <em>(Aborts a merge, when a conflic occurs)</em>
+        </li>
+        <li>
+          git checkout -b [newBranch] & git push -u origin [newBranch]
+          <em
+            >(To creat a new branch without merging it, but having it available
+            in GITHUB)</em
+          >
+        </li>
 
-      <li><em>()</em></li>
-    </ul>
-    <h2>Commits</h2>
-    <ul>
-      <li>
-        git commit --amend
-        <em
-          >(Modify the message of the last commit. A tab pops in VS and you can
-          edit it there.)</em
-        >
-      </li>
-      <li>
-        git reset --soft HEAD~1
-        <em
-          >(Deshacer el último commit. Con SOFT no se modifican los archivos.
-          HEAD es el último commit que se realizó. Con HARD se eliminan los
-          cambios.)</em
-        >
-      </li>
-    </ul>
+        <li><em>()</em></li>
+      </ul>
+      <h2>Commits</h2>
+      <ul>
+        <li>
+          git commit --amend
+          <em
+            >(Modify the message of the last commit. A tab pops in VS and you
+            can edit it there.)</em
+          >
+        </li>
+        <li>
+          git reset --soft HEAD~1
+          <em
+            >(Deshacer el último commit. Con SOFT no se modifican los archivos.
+            HEAD es el último commit que se realizó. Con HARD se eliminan los
+            cambios.)</em
+          >
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
