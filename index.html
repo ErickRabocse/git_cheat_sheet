@@ -265,28 +265,161 @@
         </li>
       </ul>
       <h2>GITHUB REPOSITORIES</h2>
-      <li>
-        git clone [github-url]
-        <em>(Clones a repository)</em>
-      </li>
-      <li>
-        git remote <em>(Muestra el nombre del repositorio remoto: origin.)</em>
-      </li>
-      <li>
-        git remote -v
-        <em
-          >(Muestra detalles de origin: fetch [obtener los cambios realizados en
-          el repo] & push [enviar al repo remoto los cambios realizados
-          locales])</em
-        >
-      </li>
-      <li>
-        git push
-        <em
-          >(Realiza un commit antes de enviar los cambios al repo remoto en
-          GitHub)</em
-        >
-      </li>
+      <ul>
+        <li>
+          git clone [github-url]
+          <em>(Clones a repository)</em>
+        </li>
+        <li>
+          git remote
+          <em>(Muestra el nombre del repositorio remoto: origin.)</em>
+        </li>
+        <li>
+          git remote -v
+          <em
+            >(Muestra detalles de origin: fetch [obtener los cambios realizados
+            en el repo] & push [enviar al repo remoto los cambios realizados
+            locales])</em
+          >
+        </li>
+        <li>
+          git push origin main
+          <em
+            >(Realiza un commit antes de enviar los cambios al repo remoto en
+            GitHub. If GitHub isn't connected you'll have to sign in or use a
+            TOKEN [developer settins, personal access tokens, tokens (classic),
+            select scope: repo & gist!])</em
+          >
+        </li>
+        <li>
+          git pull origin main
+          <em
+            >(PULL descarga el contenido de un repo remoto e inmediatamente
+            actualiza el repo local. Hace un MERGE.)</em
+          >
+        </li>
+        <li>
+          git fetch origin
+          <em
+            >(FETCH verifica los cambio realizados en el repo remoto sin
+            combinarlo al repo local, desde la última vez que se hizo git
+            pull.)</em
+          >
+        </li>
+        <li>
+          git checkout origin/main
+          <em
+            >(Muestra los cambios que se hicieron en la rama remota antes de
+            decidir si queremos mezclarlos. Para regresar a la rama de trabajo
+            local: git checkout main)</em
+          >
+        </li>
+        <li>
+          CLICK on "fork", (select) copy "main" branch only, click "create
+          fork", *optional* sync fork (to keep repo updated), clone file in
+          terminal (main).
+          <em
+            >(FORK = Bifurcar: crear una copia de un repo remoto en GitHub). You
+            can contribute to the original file with PULL REQUESTS</em
+          >
+          <ul>
+            <li>
+              After making changes, adding, commiting & pushing go to the repo
+              in GitHub and click "contribute", "open pull request", add
+              comment, click "create pull request"
+              <em
+                >(Pull request: solicitud de combinar tus cambios con el repo
+                original.)</em
+              >
+            </li>
+            <li>
+              Click on: settings, pull requests, [request-link], close pull
+              request <em>(Borrar copia difurcada.)</em>
+            </li>
+            <li>
+              Click on: repo settings, eliminar repo
+              <em
+                >(Después de borar la copia difurcada, eliminar el
+                repositorio.)</em
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          git push origin [new-branch]
+          <em
+            >(Pull requests a partir de una rama: Go to repo remoto: fork;
+            terminal en main: clone, ls, cd folder, open in VS, new branch,
+            edit, add, commit, **push**; )</em
+          >
+          <ul>
+            <li>
+              Crear pull request de nuestra rama creada, al repo remoto sin
+              compromete nuestra rama difurcada "main" modificar su main.<em
+                >(En GitHub: branch -> new-rama, contribute, open pull request,
+                add comment, create pull request. )</em
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          GitHub: repo forked, contribute, update branch
+          <em
+            >(Actualizar repositorio bifurcado --> Terminal: git checkout main,
+            git pull origin main)</em
+          >
+        </li>
+      </ul>
+      <h2>ISSUES</h2>
+      <ul>
+        <li>
+          GitHub: repo, check a file, TOP TAB: issues, new issue: [use template
+          "get started" = titulo, message, tag, type] or just "type message" and
+          "submit new issue". When done (close issue).
+          <em>(Registrar tareas pendientes)</em>
+        </li>
+        <li>
+          Once an issue has been opened
+          <em
+            >(You can assign someone to solve it, up to ten people [assigneed] &
+            you can add labels)
+          </em>
+        </li>
+        <li>
+          good first issue
+          <em
+            >(Look for this label, since it's aimed to have first-time
+            contributors solve issues.)</em
+          >
+        </li>
+      </ul>
+      <h2>CREATE REMOTE BRANCHES IN GIT</h2>
+      <ul>
+        <li>
+          GitHub: branches --> main, create branch: type name, click on "create
+          branch: ..."
+          <em
+            >(After creating the remote branch, refresh the site to see it.)</em
+          >
+        </li>
+        <li>
+          TERMINAL: cd directory, git clone (if needed), git pull origin
+          [remote-branch-created-in-GitHub], git fetch origin, git checkout
+          [remote-branch-created-in-GitHub]
+          <em>(Pull remote branch to local repo in my Terminal)</em>
+        </li>
+        <li>
+          TERMINAL: git checkout main, git branch -d [remote-branch] --> deletes
+          local branch, git branch -a --> shows remote branches, GitHub: you can
+          delete the branch there --> branches, view all branches, trash icon,
+          TERMINAL: git push origin -d [remote-branch] --> deletes remote
+          branch.
+          <em
+            >(Delete remote branch: if you haven't merged it you'll have to
+            delete it from GitHub and local.)</em
+          >
+        </li>
+      </ul>
     </div>
   </body>
 </html>
